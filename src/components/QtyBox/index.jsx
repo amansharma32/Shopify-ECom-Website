@@ -25,7 +25,7 @@ export default function QtyBox() {
     <>
     
     <div className="QtyBox flex relative">
-       <input type="number" className=' w-[75px] h-[45px] p-2  focus:outline-none border border-gray-400 rounded-md' value={qty} />
+       <input aria-hidden="true"  type="number"  readOnly className=' w-[75px] h-[45px] p-2  focus:outline-none border border-gray-400 rounded-md' value={qty} />
 
     <div className="flex items-center flex-col justify-center h-full absolute top-0  right-0 ">
          <Button className='!min-w-[10px] h-[20px]' onClick={qtyadd} >

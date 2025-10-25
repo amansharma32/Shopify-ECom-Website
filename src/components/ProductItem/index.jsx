@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
@@ -7,17 +7,25 @@ import { FaRegHeart } from "react-icons/fa";
 
 import { IoGitCompareOutline } from "react-icons/io5";
 import { MdOutlineZoomOutMap } from "react-icons/md";
+import { MyContext } from '../../App';
+
 
 export default function ProductItems() {
+
+   const context = useContext(MyContext)
+
+   
   return (
     <>
 <div className="productitem   shadow-lg ">
     <div className=" group imgwrapper w-full   overflow-hidden relative">
     <Link to="/">
  <div className="img h-[250px] overflow-hidden" >
+
       <img
          src="https://api.spicezgold.com/download/file_1734690981297_23990e6b-d01e-40fd-bb6b-98198db544c01714702040162RARERABBITMenComfortOpaqueCasualShirt2.jpg"
           className=' w-full h-full object-center object-contain' alt="" />
+
       <img
          src="https://api.spicezgold.com/download/file_1734774941574_e6mcHGzb_51e00e276f0744eebaf91c9a7b2b15aa.jpg"
           className=' w-full h-full absolute top-0 transition-all duration-500  left-0 opacity-0 group-hover:opacity-100 object-center object-contain' alt="" />
@@ -32,7 +40,8 @@ export default function ProductItems() {
           </span>
 
           <div className="actions  absolute  top-[-200px] right-2 z-20 flex items-center gap-2 flex-col  transition-all duration-500 group-hover:top-[10px] opacity-0 group-hover:opacity-100">
-            <Button className=' !w-[40px] !h-[40px] !min-w-[40px] !text-black !rounded-full !bg-black hover:!bg-orange-500 hover:!text-white group'>
+
+            <Button onClick={()=>context.handleopenProductDetails(true)} className=' !w-[40px] !h-[40px] !min-w-[40px] !text-black !rounded-full !bg-black hover:!bg-orange-500 hover:!text-white group'>
 <MdOutlineZoomOutMap className=' text-[18px]  group-hover:text-white'/>
             </Button>
 

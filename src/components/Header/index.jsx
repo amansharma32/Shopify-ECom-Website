@@ -70,7 +70,7 @@ export default function Header() {
 <div className="col3 w-[30%] flex items-center">
  <ul className=" flex flex-row gap-3 items-center w-full justify-end">
   <li className=" list-none pl-7 text-md">
-    <Link to="/compare-products" className=" link transition">
+    <Link to="/login" className=" link transition">
       Sign In
     </Link> &nbsp; |  &nbsp; <Link to="/compare-products" className=" link transition ">
       Register
