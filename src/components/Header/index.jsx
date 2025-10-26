@@ -9,6 +9,8 @@ import { IoGitCompare } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa6";
 import Tooltip from '@mui/material/Tooltip';
 import Navigation from "./Navigation";
+import { MyContext } from "../../App";
+import { useContext } from "react";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -20,6 +22,10 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 export default function Header() {
+
+
+   const cartButton = useContext(MyContext)
+
   return (
 
     <>
@@ -72,7 +78,7 @@ export default function Header() {
   <li className=" list-none pl-7 text-md">
     <Link to="/login" className=" link transition">
       Sign In
-    </Link> &nbsp; |  &nbsp; <Link to="/compare-products" className=" link transition ">
+    </Link> &nbsp; |  &nbsp; <Link to="/register" className=" link transition ">
       Register
     </Link>
   </li>
@@ -81,7 +87,7 @@ export default function Header() {
    <Tooltip title="Cart">
 
   
-       <IconButton aria-label="cart">
+       <IconButton onClick={()=>cartButton.setopenCartPanel(true)} aria-label="cart">
       <StyledBadge badgeContent={2} color="warning">
         <FaCartShopping />
       </StyledBadge>
